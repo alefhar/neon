@@ -12,10 +12,6 @@ class Image(val width: Int, val height: Int, val channels: Int) {
         return pixels[stride(x, y, c)]
     }
 
-    fun sizeInBytes(): Int {
-        return pixels.size * Long.SIZE_BYTES
-    }
-
     private fun stride(x: Int, y: Int, c: Int): Int {
         return c + channels * (y * width + x)
     }
